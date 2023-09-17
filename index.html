@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HSK Vocabulary Flashcards</title>
+</head>
+<body>
+    <div id="level-buttons">
+        <button data-level="1">1</button>
+        <button data-level="2">2</button>
+        <button data-level="3">3</button>
+        <button data-level="4">4</button>
+        <button data-level="5">5</button>
+        <button data-level="6">6</button>
+    </div>
+
+    <div id="num-cards-buttons">
+        <button data-num-cards="10">10</button>
+        <button data-num-cards="30">30</button>
+        <button data-num-cards="60">60</button>
+    </div>
+
+    <div id="mode-buttons">
+        <button data-mode="Guess Pinyin">Guess Pinyin</button>
+        <button data-mode="Guess Character">Guess Character</button>
+    </div>
+
+    <button id="start" disabled>Start Session</button>
+
+    <div id="game-container" style="display: none;">
+        <div class="flashcard">
+            <div class="hanzi"></div>
+            <div class="pinyin"></div>
+            <div class="translations"></div>
+        </div>
+
+        <div class="controls">
+            <button id="hint">Hint</button>
+            <input type="text" id="user-input" placeholder="Your Answer" autocomplete="off">
+            <button id="check">Check</button>
+            <button id="skip">Skip</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
