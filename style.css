@@ -1,122 +1,133 @@
-/* Add these styles to your existing style.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#level-buttons,
-#num-cards-buttons,
-#mode-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+body{
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background: rgb(214, 214, 214);
 }
 
-#level-buttons button,
-#num-cards-buttons button,
-#mode-buttons button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+button{
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: whitesmoke;
 }
 
-#level-buttons button:hover,
-#num-cards-buttons button:hover,
-#mode-buttons button:hover {
-    background-color: #0056b3;
+button:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-#start {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+.container{
+  width: 1280px;
+  margin: auto;
 }
 
-#start:hover {
-    background-color: #218838;
+header{background-color: #fff;}
+
+#header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 20px;
+  background: #fff;
 }
 
-#game-container {
-    display: none;
+#header button{
+  font-family: inherit;
+  border: 1px solid red;
 }
 
-.flashcard {
-    width: 300px;
-    margin: 50px auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+#create_card{
+  display: none;
+  width: 370px;
+  margin:auto;
+  padding: 20px;
+  margin-top: 10px;
+  background: whitesmoke;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
 }
 
-.hanzi {
-    font-size: 48px;
+#create_card h2{
+  color: black;
+  text-align: center;
 }
 
-.pinyin {
-    font-size: 24px;
+#create_card textarea{
+  width: 100%;
+  border-radius: 5px;
+  font-family: inherit;
+  border: 1px solid lightgray;
+  resize: none;
+}
+
+#create_card button{width: fit-content;}
+
+#flashcards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+.flashcard{
+  width: 370px;
+  height: 200px;
+  word-wrap: break-word;
+  margin: 10px; 
+  background:#fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.flashcard h2{font-size: 1rem;}
+
+.fa-minus{
+  top: 3%;
+  right: 2%;
+  position: absolute;
+  color: #1a1a1a;
+  transition: 0.3s ease-out;
+}
+
+.fa-minus:hover{color: red;}
+
+@media(max-width:1280px){
+  .container{width: 100%;}
+}
+
+@media(max-width:768px){
+  .flashcard{margin: auto;}
+
+  .flashcard{
     margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
-.translations {
-    margin-top: 20px;
-    font-size: 16px;
-}
+@media(max-width:480px){
+  #header{
+    padding: 20px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.controls {
-    margin-top: 20px;
-}
+  #create_card{width: 95%;}
 
-#user-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
+  .flashcard{width: 100%;}
 
-#skip {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #f0ad4e;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-#skip:hover {
-    background-color: #ec971f;
-}
-
-button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
